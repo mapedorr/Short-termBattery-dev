@@ -49,7 +49,7 @@ public class BorderHighlight : MonoBehaviour
 	void OnHighlightOn ()
 	{
 		// change the Sprite so the object shows its border
-		if (m_spriteRenderer != null)
+		if (m_spriteRenderer != null && over != null)
 		{
 			m_spriteRenderer.sprite = over;
 		}
