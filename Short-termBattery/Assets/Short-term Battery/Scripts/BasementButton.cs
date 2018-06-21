@@ -14,6 +14,7 @@ public class BasementButton : MonoBehaviour
 	// ═════════════════════════════════════════════════════════════ PRIVATES ════
 	SpriteRenderer m_spriteRenderer;
 	Sprite m_defaultSprite;
+	AudioSource m_audioSource;
 
 	// ══════════════════════════════════════════════════════════════ METHODS ════
 	/// <summary>
@@ -22,6 +23,7 @@ public class BasementButton : MonoBehaviour
 	void Awake ()
 	{
 		m_spriteRenderer = GetComponent<SpriteRenderer> ();
+		m_audioSource = GetComponent<AudioSource> ();
 
 		// store the default Sprite for the button
 		if (m_spriteRenderer != null)
@@ -46,6 +48,12 @@ public class BasementButton : MonoBehaviour
 		if (m_spriteRenderer != null && buttonPressed != null)
 		{
 			m_spriteRenderer.sprite = buttonPressed;
+		}
+
+		// play the sound effect
+		if (m_audioSource != null)
+		{
+			m_audioSource.Play ();
 		}
 
 		// send the value of the button to the current combination of the strong box

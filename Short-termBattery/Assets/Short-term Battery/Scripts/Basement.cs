@@ -6,13 +6,15 @@ using UnityEngine;
 public class Basement : MonoBehaviour
 {
 	// ══════════════════════════════════════════════════════════════ PUBLICS ════
+	[Header ("Strongbox")]
 	public Transform strongboxLedsLight;
 	public GameObject strongboxGO;
 	public Sprite openStrongbox;
 	public Sprite openStrongboxOver;
-	public GameObject bagGO;
 	[Range (1, 3)]
 	public int requiredCombinations;
+	[Header ("Bag")]
+	public GameObject bagGO;
 
 	// ═════════════════════════════════════════════════════════════ PRIVATES ════
 	string m_currentCombination;
@@ -24,7 +26,8 @@ public class Basement : MonoBehaviour
 	// 		strongbocLedsLight 1: -0.918
 	// 		strongbocLedsLight 2: -0.667
 	// 		strongbocLedsLight 3: -0.416
-	float ledsLightXDisplacement = 0.251f;
+	float m_ledsLightXDisplacement = 0.251f;
+	Strongbox m_strongbox;
 
 	// ══════════════════════════════════════════════════════════════ METHODS ════
 	/// <summary>
@@ -52,11 +55,36 @@ public class Basement : MonoBehaviour
 			strongboxLedsLight.localPosition =
 				new Vector3 (-1.169f, strongboxLedsLight.localPosition.y, 0f);
 		}
+
+		// get the Strongbox component
+		m_strongbox = strongboxGO.GetComponent<Strongbox> ();
 	}
 
-	IEnumerator ResetStrongbox ()
+	IEnumerator ResetStrongbox (bool failure)
 	{
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (0.3f);
+
+		if (!failure)
+		{
+			// move the LEDs' light to the next LED
+			strongboxLedsLight.localPosition += Vector3.right * m_ledsLightXDisplacement;
+
+			// play sound effect of combination success
+			if (m_strongbox != null)
+			{
+				m_strongbox.PlayCombinationSuccess ();
+			}
+		}
+		else
+		{
+			// play sound effect of combination failure
+			if (m_strongbox != null)
+			{
+				m_strongbox.PlayCombinationFailure ();
+			}
+		}
+
+		yield return new WaitForSeconds (1);
 
 		foreach (BasementButton button in m_strongboxButtons)
 		{
@@ -69,11 +97,13 @@ public class Basement : MonoBehaviour
 
 	IEnumerator OpenStrongbox ()
 	{
-		// TODO: play sound effect of all combinations done
-
-		yield return new WaitForSeconds (2);
-
 		// play sound effect of strongbox opening
+		if (m_strongbox != null)
+		{
+			m_strongbox.PlayStrongboxOpened ();
+		}
+
+		yield return new WaitForSeconds (1);
 
 		// change the Sprite of the strongbox to the open one
 		if (strongboxGO != null)
@@ -102,6 +132,8 @@ public class Basement : MonoBehaviour
 
 	public void AddCombinationStep (int number)
 	{
+		bool combinationFailure = false;
+
 		m_currentCombination += number;
 		if (m_currentCombination.Length == 6)
 		{
@@ -111,9 +143,6 @@ public class Basement : MonoBehaviour
 			{
 				// Place the game in a cutscene
 				KickStarter.stateHandler.StartCutscene ();
-
-				// move the LEDs' light to the next LED
-				strongboxLedsLight.localPosition += Vector3.right * ledsLightXDisplacement;
 
 				// change the index of the combination to match
 				m_currentCombinationIndex++;
@@ -125,14 +154,10 @@ public class Basement : MonoBehaviour
 					StartCoroutine (OpenStrongbox ());
 					return;
 				}
-				else
-				{
-					// TODO: play sound effect of combination success
-				}
 			}
 			else
 			{
-				// TODO: play sound effect of combination failure
+				combinationFailure = true;
 			}
 
 			// clear the current combination
@@ -142,7 +167,7 @@ public class Basement : MonoBehaviour
 			// button Sprites visible again
 			if (m_strongboxButtons.Length > 0)
 			{
-				StartCoroutine (ResetStrongbox ());
+				StartCoroutine (ResetStrongbox (combinationFailure));
 			}
 		}
 	}
