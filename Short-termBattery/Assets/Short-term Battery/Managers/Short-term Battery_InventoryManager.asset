@@ -47,7 +47,7 @@ MonoBehaviour:
     lineID: -1
     useIconID: 0
     binID: -1
-    isEditing: 0
+    isEditing: 1
     recipeSlot: -1
     lastInteractionIndex: 0
     overrideUseSyntax: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     hotspotPrefix2:
       label: on
       lineID: -1
-    useActionList: {fileID: 0}
+    useActionList: {fileID: 11400000, guid: 1ccffb6b95e609042b78e02e8eaa9519, type: 2}
     lookActionList: {fileID: 0}
     interactions: []
     combineActionList: []
@@ -99,7 +99,7 @@ MonoBehaviour:
     lineID: -1
     useIconID: 0
     binID: -1
-    isEditing: 1
+    isEditing: 0
     recipeSlot: -1
     lastInteractionIndex: 0
     overrideUseSyntax: 0
