@@ -14,7 +14,7 @@ MonoBehaviour:
   items:
   - label: invList
     id: 0
-    altLabel: My list
+    altLabel: Mi lista
     carryOnStart: 1
     carryOnStartNotDefault: 0
     carryOnStartID: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     lineID: -1
     useIconID: 0
     binID: -1
-    isEditing: 1
+    isEditing: 0
     recipeSlot: -1
     lastInteractionIndex: 0
     overrideUseSyntax: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
     unhandledCombineActionList: {fileID: 0}
   - label: invBag
     id: 1
-    altLabel: Bag
+    altLabel: Maleta
     carryOnStart: 0
     carryOnStartNotDefault: 0
     carryOnStartID: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
     lineID: -1
     useIconID: 0
     binID: -1
-    isEditing: 0
+    isEditing: 1
     recipeSlot: -1
     lastInteractionIndex: 0
     overrideUseSyntax: 0
