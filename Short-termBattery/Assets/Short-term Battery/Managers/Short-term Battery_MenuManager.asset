@@ -1071,10 +1071,10 @@ MonoBehaviour:
   linkedUiID: 14540120
   relativeRect:
     serializedVersion: 2
-    x: 21.4
-    y: 21.4
-    width: 419.44
-    height: 88.493996
+    x: 15.16
+    y: 15.16
+    width: 297.13602
+    height: 49.392
   relativePosition: {x: 0, y: 0}
   numSlots: 1
   uiText: {fileID: 0}
@@ -1277,11 +1277,11 @@ MonoBehaviour:
   rectTransformID: 14532472
   uiTransitionType: 1
   uiPositionType: 0
-  isEditing: 1
+  isEditing: 0
   isLocked: 0
   id: 9
   title: Subtitles
-  manualSize: {x: 43.2, y: 21.809633}
+  manualSize: {x: 43.200005, y: 23.723812}
   positionType: 6
   manualPosition: {x: 50, y: 37}
   positionSmoothing: 0
@@ -1351,13 +1351,13 @@ MonoBehaviour:
   speechProximityLimit: 0
   speechProximityDistance: 10
   deleteUIWhenTurnOff: 0
-  biggestElementSize: {x: 440.84, y: 109.894}
+  biggestElementSize: {x: 312.29602, y: 64.552}
   rect:
     serializedVersion: 2
-    x: 303.88
-    y: 157.09302
-    width: 462.24
-    height: 131.29399
+    x: 215.27199
+    y: 84.464
+    width: 327.45602
+    height: 79.712006
 --- !u!114 &114245292578796946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4121,7 +4121,7 @@ MonoBehaviour:
   rectTransformID: 7840166
   uiTransitionType: 1
   uiPositionType: 0
-  isEditing: 0
+  isEditing: 1
   isLocked: 0
   id: 3
   title: Inventory
@@ -4146,7 +4146,7 @@ MonoBehaviour:
   - {fileID: 114879329645919462}
   - {fileID: 114968963655222208}
   transitionProgress: 0
-  appearType: 1
+  appearType: 7
   speechMenuType: 0
   speechMenuLimit: 0
   limitToCharacters: 
@@ -5042,16 +5042,16 @@ MonoBehaviour:
     sprite: {fileID: 0}
   - uiButton: {fileID: 0}
     uiButtonID: 7951880
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 660fa71b0b7644085ad60aa3370e41bc, type: 3}
   - uiButton: {fileID: 0}
     uiButtonID: 7955126
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 660fa71b0b7644085ad60aa3370e41bc, type: 3}
   - uiButton: {fileID: 0}
     uiButtonID: 7958782
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 660fa71b0b7644085ad60aa3370e41bc, type: 3}
   - uiButton: {fileID: 0}
     uiButtonID: 7961908
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 660fa71b0b7644085ad60aa3370e41bc, type: 3}
   uiPointerState: 0
   textEffects: 0
   outlineSize: 2

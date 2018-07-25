@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Mapedorr
-  productName: Short-term Battery
+  companyName: Carenalga
+  productName: Short Term Battery
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.12941177, g: 0.2627451, b: 0.32156864, a: 1}
